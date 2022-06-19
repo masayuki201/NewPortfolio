@@ -1,0 +1,180 @@
+/* footer最下部固定 */
+body,
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* 動画のサイズ */
+/* .movie{
+    width: 290px;
+}
+
+.movie > p{
+    height: 72px;
+}
+
+.button{
+    width: 290px;
+} */
+
+/* 背景画 */
+.jumbotron{
+    background-image: url(../images/d.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* 背景画のサイズ */
+.jumbotron-extend{
+    position: relative;
+    height: 80vh;
+    min-height: 300px;
+}
+
+/* 背景画上の文字 */
+.jumbotron-container{
+    position: relative;
+    top: 90%;
+    transform: translateY(-50%);
+}
+
+.my-radio {
+    position: relative;
+    display: block; /* 縦並びに */
+    margin: 0.5em 0; /* 前後のスペース */
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ログインボタンの配色 */
+/* 通常のボタン色 */
+.btn-violet,
+.btn-violet.disabled, .btn-violet:disabled {
+    color: #fff;
+    background-color: #6369d1;
+    border-color: #6369d1;
+}
+
+/* focusされた時の枠線の色 */
+.btn-violet:focus, .btn-violet.focus,
+.btn-violet:not(:disabled):not(.disabled):active:focus, .btn-violet:not(:disabled):not(.disabled).active:focus,
+.show > .btn-violet.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(176, 109, 224, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-violet:hover {
+    color: #fff;
+    background-color: #5a5eaa;
+    border-color: #1f2472;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-violet:not(:disabled):not(.disabled):active, .btn-violet:not(:disabled):not(.disabled).active,
+.show > .btn-violet.dropdown-toggle {
+    color: #fff;
+    background-color: #363cad;
+    border-color: #121872;
+}
+
+/* 新規登録ボタンの配色
+/* 通常のボタン色 */
+.btn-green,
+.btn-green.disabled, .btn-green:disabled {
+    color: #fff;
+    background-color: #419D78;
+    border-color: #419D78;
+}
+
+/* focusされた時の枠線の色 */
+.btn-green:focus, .btn-green.focus,
+.btn-green:not(:disabled):not(.disabled):active:focus, .btn-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-green.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(53, 114, 114, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-green:hover {
+    color: #fff;
+    background-color: #0a915b;
+    border-color: #069b5f;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-green:not(:disabled):not(.disabled):active, .btn-green:not(:disabled):not(.disabled).active,
+.show > .btn-green.dropdown-toggle {
+    color: #fff;
+    background-color: #069b5f;
+    border-color: #05ad6a;
+}
+
+/* 登録ボタン・修正/退会ボタンの配色
+/* 通常のボタン色 */
+.btn-ryb,
+.btn-ryb.disabled, .btn-ryb:disabled {
+    color: #fff;
+    background-color: #244aff;
+    border-color: #244aff;
+}
+
+/* focusされた時の枠線の色 */
+.btn-ryb:focus, .btn-ryb.focus,
+.btn-ryb:not(:disabled):not(.disabled):active:focus, .btn-ryb:not(:disabled):not(.disabled).active:focus,
+.show > .btn-ryb.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(25, 3, 226, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-ryb:hover {
+    color: #fff;
+    background-color: #0930f7;
+    border-color: #072ad6;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-ryb:not(:disabled):not(.disabled):active, .btn-ryb:not(:disabled):not(.disabled).active,
+.show > .btn-ryb.dropdown-toggle {
+    color: #fff;
+    background-color: #032bf3;
+    border-color: #0327da;
+}
+
+
+/* 削除ボタン・退会ボタンの配色
+/* 通常のボタン色 */
+.btn-pink,
+.btn-pink.disabled, .btn-pink:disabled {
+    color: #fff;
+    background-color: #f7567c;
+    border-color: #f7567c;
+}
+
+/* focusされた時の枠線の色 */
+.btn-pink:focus, .btn-pink.focus,
+.btn-pink:not(:disabled):not(.disabled):active:focus, .btn-pink:not(:disabled):not(.disabled).active:focus,
+.show > .btn-pink.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(197, 73, 170, 0.5);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
+.btn-pink:hover {
+    color: #fff;
+    background-color: #f32d5b;
+    border-color: #da214c;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-pink:not(:disabled):not(.disabled):active, .btn-pink:not(:disabled):not(.disabled).active,
+.show > .btn-pink.dropdown-toggle {
+    color: #fff;
+    background-color: #f51449;
+    border-color: #d80a3a;
+}
