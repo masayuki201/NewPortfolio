@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,5 @@ Route::get('/', function () {
 });
 
 //みんなの動画
-Route::get('/list', [ListController::class, 'list'])->name('list.index');
+Route::get('/list', [ListController::class, 'index'])->name('list.index');
 
