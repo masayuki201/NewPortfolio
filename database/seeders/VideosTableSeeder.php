@@ -68,7 +68,7 @@ class VideosTableSeeder extends Seeder
             [
 //                'id' => '7',
                 'user_id' => '4',
-                'url' => '4iquPLGDKAs',
+                'url' => 'Rv6vaAl_mkY',
                 'target_id' => '4',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -108,7 +108,7 @@ class VideosTableSeeder extends Seeder
             [
 //                'id' => '12',
                 'user_id' => '8',
-                'url' => '0EykttJuwp0',
+                'url' => 'dM7x1PNZDo0',
                 'target_id' => '4',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
