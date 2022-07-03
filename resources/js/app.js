@@ -1,10 +1,14 @@
 import './bootstrap'
 import Vue from 'vue'
-import ExampleComponent from "./components/ExampleComponent";
+import NameChip from "./components/NameChip";
+import VideoCard from "./components/VideoCard";
+import TargetgradeChip from "./components/TargetgradeChip";
 
 const app = new Vue({
     el: '#app',
     components: {
-        ExampleComponent,
+        NameChip,
+        VideoCard,
+        TargetgradeChip,
     }
 });
