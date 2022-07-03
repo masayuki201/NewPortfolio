@@ -20,9 +20,8 @@ class ListController extends Controller
 
     public function index(Request $request)
     {
-        $params = $this->service->getIndexPage($request);
+        $params = $this->service->getListPage($request);
 
-        \Debugbar::info($params);
         return  view('list.index', $params);
 
     }
