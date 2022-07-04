@@ -9,10 +9,8 @@ use http\Env\Request;
 
 class ListService implements ListServiceInterface
 {
-    public function getIndexPage($request)
+    public function getListPage($request)
     {
-\Debugbar::info('最初');
-
         // フォームから検索文字列と選択カテゴリーidを取得
         $select_target_id = $request->select_target_id;
 
@@ -34,7 +32,6 @@ class ListService implements ListServiceInterface
             'targetGrades' => $targetGrades,
             'select_target_id' => $select_target_id,
         ];
-\Debugbar::info('saigo');
         return $params;
     }
 
