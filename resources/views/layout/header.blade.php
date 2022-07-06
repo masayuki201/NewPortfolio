@@ -2,12 +2,12 @@
     {{-- サイトロゴ --}}
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(255, 255, 255)">
         <a class="navbar-brand text-dark" href="/"><h6>Children's<br>Videos</h6></a>
-        <a class="navbar-brand text-dark mr-auto" href="/"><h1>ちるび</h1></a>
+        <a class="navbar-brand text-dark mr-auto" href="/"><h1>{{ __('layout.title') }}</h1></a>
 
         {{-- 1段目右寄せメニュー ログインしている場合 ニックネームを表示する--}}
         @auth
             <div class="site-description ml-auto">
-                {{Auth::user()->nickname}}さん
+                {{Auth::user()->nickname}}
             </div>
         @endauth
     </nav>
@@ -24,19 +24,19 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/pickup">
                         <i class="fa fa-map-pin faa-vertical fa-fw"></i>
-                        ピックアップ
+                        {{ __('layout.pickup') }}
                     </a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/ranking">
                         <i class="fa fa-flag-checkered faa-shake fa-fw"></i>
-                        ランキング
+                        {{ __('layout.ranking') }}
                     </a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/list">
                         <i class="fa fa-smile-beam faa-tada fa-fw"></i>
-                        みんなの動画
+                        {{ __('layout.list') }}
                     </a>
                 </li>
             </ul>
@@ -54,13 +54,13 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/signup">
                         <i class="fa fa-user faa-flash"></i>
-                        新規登録
+                        {{ __('layout.register') }}
                     </a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/login">
                         <i class="fa fa-door-open faa-ring"></i>
-                        ログイン
+                        {{ __('layout.login') }}
                     </a>
                 </li>
             </ul>
@@ -98,7 +98,7 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/videos/create">
                         <i class="fa fa-caret-square-right faa-bounce fa-fw"></i>
-                        動画登録
+                         {{ __('layout.video_regist') }}
                     </a>
                 </li>
 {{--            </ul>--}}
@@ -108,13 +108,13 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/user/{{Auth::id()}}">
                         <i class="fa fa-user faa-flash"></i>
-                        マイページ
+                        {{ __('layout.mypage') }}
                     </a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link text-light faa-parent  animated-hover" href="/logout">
                         <i class="fa fa-door-open faa-ring"></i>
-                        ログアウト
+                        {{ __('layout.logout') }}
                     </a>
                 </li>
             </ul>
