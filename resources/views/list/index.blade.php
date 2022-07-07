@@ -72,7 +72,7 @@
             @endforeach
         </div>
     </div>
-
+    @include('layout.footer')
 @endsection
 
 @section('script')
