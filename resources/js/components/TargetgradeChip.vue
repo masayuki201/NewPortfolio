@@ -1,6 +1,6 @@
 <template>
     <div class="text-left">
-        おすすめ：
+        &nbsp;おすすめ：
         <v-chip
             class="ma-2"
             :color="gradeColor(target_grade)"
