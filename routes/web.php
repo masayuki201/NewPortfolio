@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PickupController;
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ListController;
 
 /*
@@ -18,6 +20,14 @@ Route::get('/', function () {
     return view('top.top');
 });
 
+//ピックアップ
+Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
+
+//ランキング
+Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index');
+
 //みんなの動画
 Route::get('/list', [ListController::class, 'index'])->name('list.index');
+
+
 
