@@ -19,3 +19,7 @@ http://localhost/
 
 ## phpmyadmin
 http://localhost:8080
+
+##その他
+laravel/uiインストール（8系）
+composer require laravel/ui
