@@ -15,7 +15,7 @@ class CreateTargetsTable extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->increments('id')->comment('対象ID');
-            $table->string('target_grade',10)->comment('対象学年');
+            $table->string('target_grade')->comment('対象学年');
         });
     }
 

@@ -15,10 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->comment('ユーザーID');
-            $table->string('nickname',16)->comment('ニックネーム');
-            $table->string('email',128)->comment('メールアドレス');
+            $table->string('nickname')->unique()->comment('ニックネーム');
+            $table->string('email')->unique()->comment('メールアドレス');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password',64)->comment('パスワード');
+            $table->string('password')->nullable()->comment('パスワード');
             $table->char('delete_flag',1)->default(0)->comment('deleteフラグ');
             $table->rememberToken();
             $table->timestamps();

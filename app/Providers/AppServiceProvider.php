@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\RegisterService;
+use App\Services\RegisterServiceInterface;
 use App\Services\ListService;
 use App\Services\ListServiceInterface;
 use App\Services\PickupService;
@@ -19,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(
+            RegisterServiceInterface::class, RegisterService::class,
+        );
         $this->app->bind(
             ListServiceInterface::class, ListService::class,
         );

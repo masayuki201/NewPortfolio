@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ListController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,10 @@ use App\Http\Controllers\ListController;
 Route::get('/', function () {
     return view('top.top');
 });
+
+//新規登録
+Route::get('/signup', [RegisterController::class, 'showRegistrationForm'])->name('signup');
+Route::post('/signup', [RegisterController::class, 'register'])->name('signup.post');
 
 //ピックアップ
 Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
