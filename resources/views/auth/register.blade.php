@@ -15,6 +15,7 @@
                             <i class="fab fa-google mr-1"></i>{{ __('register.google_button') }}
                         </a>
 
+                        @include('error.error_card_list')
 
                         <div class="card-text">
 
@@ -50,5 +51,6 @@
                 </div>
             </div>
         </div>
-    </div>    @include('layout.footer')
+    </div>
+    @include('layout.footer')
 @endsection
