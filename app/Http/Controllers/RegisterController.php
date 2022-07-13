@@ -44,9 +44,9 @@ class RegisterController extends Controller
     }
 
     // Register.blade.phpを表示させる
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
+//    public function showRegistrationForm()
+//    {
+//        return view('auth.register');
+//    }
 
 }
