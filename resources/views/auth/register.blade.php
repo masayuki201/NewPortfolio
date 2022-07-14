@@ -12,7 +12,7 @@
                         <h2 class="h3 card-title text-center mt-2">{{ __('register.title') }}</h2>
 
 {{--                        <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">--}}
-                            <i class="fab fa-google mr-1"></i>{{ __('register.google_button') }}
+                            <i class="fab fa-google mr-1"></i>{{ __('register.goto_google') }}
                         </a>
 
                         @include('error.error_card_list')
@@ -41,10 +41,9 @@
                                 <button class="btn btn-block blue-gradient mt-2 md-2" type="submit">{{ __('register.submit') }}</button>
                             </form>
 
-
-{{--                            <div class="mt-0">--}}
-{{--                                <a href="{{ route('login') }}" class="card-text">ログインはこちら</a>--}}
-{{--                            </div>--}}
+                            <div class="mt-0">
+                                <a href="{{ route('login') }}" class="card-text">{{ __('register.goto_login') }}</a>
+                            </div>
 
                         </div>
                     </div>
