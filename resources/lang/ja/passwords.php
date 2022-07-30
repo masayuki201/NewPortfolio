@@ -9,4 +9,9 @@ return [
     'user' => "メールアドレスに一致するユーザーは存在していません。",
     'throttled' => 'しばらく待ってから再度試してください。',
 
+    'set_new_password' => '新しいパスワードを設定',
+    'new_password' => '新しいパスワード',
+    'new_password_retype' => '新しいパスワード（再入力）',
+    'submit' => '送信',
+
 ];
