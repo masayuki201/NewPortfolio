@@ -8,7 +8,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ListController;
-
+use App\Http\Controllers\VideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +34,11 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//パスワード再設定
+//パスワード再設定関連
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
-
-
 
 //ピックアップ
 Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
@@ -51,5 +49,11 @@ Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index
 //みんなの動画
 Route::get('/list', [ListController::class, 'index'])->name('list.index');
 
-
+//ログイン中　動画登録関連
+Route::group(['middleware' => 'auth'], function () {
+    //動画登録画面
+    Route::get('/videos/create', [VideosController::class, 'create'])->name('videos.create');
+    //動画登録
+    Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
+});
 
