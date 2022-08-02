@@ -8,4 +8,4 @@
 
 その場合は、このメールは破棄していただいて結構です。
 
-memo({{ url(config('app.url')) }})
+Children's Videos-ちるび-({{ url(config('app.url')) }})
