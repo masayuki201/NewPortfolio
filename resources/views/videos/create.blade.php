@@ -31,9 +31,7 @@
                                     <small>例）登録したいYouTube動画のURLが https://www.youtube.com/watch?v=PkDfrVdCwCs であれば、
                                         "v="の直後のPkDfrVdCwCsを入力してください。（※Max:11ケタ）</small>
                                 </div>
-
                                 <br>
-
                                 <div class="form-group col-md-12">②登録動画のおすすめの対象を選択してください♪（※1対象のみ)</div>
 
                                 <br>
