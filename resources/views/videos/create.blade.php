@@ -33,9 +33,7 @@
                                 </div>
                                 <br>
                                 <div class="form-group col-md-12">②登録動画のおすすめの対象を選択してください♪（※1対象のみ)</div>
-
                                 <br>
-
                                 <div class="form-check-inline">
                                     <label>
                                         <input type="checkbox" name="target_id" id="1" value="1" checked>&nbsp;幼児
