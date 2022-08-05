@@ -39,13 +39,11 @@
                                         <input type="checkbox" name="target_id" id="1" value="1" checked>&nbsp;幼児
                                     </label>
                                 </div>
-
                                 <div class="form-check-inline">
                                     <label>
                                         <input type="checkbox" name="target_id" id="2" value="2">&nbsp;年少
                                     </label>
                                 </div>
-
                                 <div class="form-check-inline">
                                     <label>
                                         <input type="checkbox" name="target_id" id="3" value="3">&nbsp;年中
