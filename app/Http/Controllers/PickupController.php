@@ -17,8 +17,7 @@ class PickupController extends Controller
     public function index(Request $request)
     {
         $pickup = $this->service->getPickupPage($request);
-\Debugbar::info($pickup);
-//dd($pickup);
+
         return view('pickup.index', ['pickup' => $pickup]);
     }
 }
