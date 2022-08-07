@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\VideosRequest;
 use App\Services\VideosServiceInterface;
+use Illuminate\Support\Facades\Auth;
+
 
 class VideosController extends Controller
 {
@@ -25,21 +28,19 @@ class VideosController extends Controller
     }
 
     //動画登録フォームからの動画登録アクション
-    public function store(Request $request)
+    public function store(VideosRequest $request)
     {
         //動画登録時のバリデーション
-        $this->validate($request,[
-            'url' => 'required|max:11',
-            'target_id' => 'max:10',
-        ]);
-
-        //動画登録時 url,target_idをDBへ登録作業
-        $request->user()->videos()->create([
-            'url' => $request->url,
-            'target_id' => $request->target_id,
-        ]);
+        $this->service->storeVideos($request);
 
         return back();
     }
 
+    //動画削除アクション
+    public function destroy($id)
+    {
+        $this->service->destroyVideos($id);
+
+        return back();
+    }
 }
