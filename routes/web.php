@@ -55,5 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/videos/create', [VideosController::class, 'create'])->name('videos.create');
     //動画登録
     Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
+    //動画削除
+    Route::delete('/videos/{id}/delete', [VideosController::class, 'destroy'])->name('videos.destroy');
+
 });
 
