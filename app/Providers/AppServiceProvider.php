@@ -10,6 +10,8 @@ use App\Services\PickupService;
 use App\Services\PickupServiceInterface;
 use App\Services\RankingService;
 use App\Services\RankingServiceInterface;
+use App\Services\VideosService;
+use App\Services\VideosServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -33,6 +35,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             RankingServiceInterface::class, RankingService::class,
         );
+         $this->app->bind(
+             VideosServiceInterface::class, VideosService::class,
+         );
     }
 
     /**
