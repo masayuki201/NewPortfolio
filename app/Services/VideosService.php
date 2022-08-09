@@ -2,10 +2,9 @@
 
 namespace App\Services;
 
+use App\Http\Requests\VideosRequest;
 use App\Models\Video;
 use Illuminate\Support\Facades\Auth;
-
-
 
 class VideosService implements VideosServiceInterface
 {
@@ -21,5 +20,24 @@ class VideosService implements VideosServiceInterface
 
         return $data;
     }
+
+    public function storeVideos(VideosRequest $request)
+    {
+        //動画登録時 url,target_idをDBへ登録作業
+        $request->user()->videos()->create([
+            'url' => $request->url,
+            'target_id' => $request->target_id,
+        ]);
+    }
+
+    public function destroyVideos($id)
+    {
+        $video = Video::find($id);
+
+        if (Auth::id() == $video->user_id) {
+            $video->delete();
+        }
+    }
+
 }
 
