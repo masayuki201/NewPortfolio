@@ -9,6 +9,7 @@ use App\Http\Controllers\PickupController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\VideosController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,23 @@ Route::get('/', function () {
 Route::get('/signup', [RegisterController::class, 'showRegistrationForm'])->name('signup');
 Route::post('/signup', [RegisterController::class, 'register'])->name('signup.post');
 
+//GoogleのIDで新規登録
+Route::prefix('register')->name('register.')->group(function () {
+    Route::get('/{provider}', [RegisterController::class, 'showProviderUserRegistrationForm'])->name('{provider}');
+    Route::post('/{provider}', [RegisterController::class, 'registerProviderUser'])->name('{provider}');
+
+});
+
 //ログイン
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Googleログイン
+Route::prefix('login')->name('login.')->group(function () {
+    Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
+    Route::get('/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('{provider}.callback');
+});
 
 //パスワード再設定関連
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
@@ -57,6 +71,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
     //動画削除
     Route::delete('/videos/{id}/delete', [VideosController::class, 'destroy'])->name('videos.destroy');
+});
 
+//ログイン中　動画登録関連
+Route::group(['middleware' => 'auth'], function () {
+    //マイページ
+    Route::get('/user/{id}', [UsersController::class, 'show'])->name('user.show');
+    //マイページ編集
+    Route::get('/user/{id}/edit', [UsersController::class, 'edit'])->name('user.edit');
+    //マイページ更新
+    Route::post('/user/{id}', [UsersController::class, 'update'])->name('user.update');
+    //ユーザ情報削除
+    Route::delete('/user/{id}/delete', [UsersController::class, 'destroy'])->name('user.destroy');
 });
 
