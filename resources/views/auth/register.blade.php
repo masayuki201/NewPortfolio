@@ -11,8 +11,8 @@
                     <div class="card-body text-center">
                         <h2 class="h3 card-title text-center mt-2">{{ __('auth.register') }}</h2>
 
-{{--                        <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">--}}
-                            <i class="fab fa-google mr-1"></i>{{ __('auth.goto_google') }}
+                        <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger text-white">
+                            <i class="fab fa-google mr-1 text-white"></i>{{ __('auth.goto_google') }}
                         </a>
 
                         @include('error.error_card_list')
