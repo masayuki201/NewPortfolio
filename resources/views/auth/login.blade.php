@@ -11,6 +11,10 @@
                     <div class="card-body text-center">
                         <h2 class="h3 card-title text-center mt-2">{{ __('auth.login') }}</h2>
 
+                        <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger text-white">
+                            <i class="fab fa-google text-white mr-1"></i>{{ __('auth.login_google') }}
+                        </a>
+
                         @include('error.error_card_list')
 
                         <div class="card-text">
@@ -30,7 +34,7 @@
                                 <input type="hidden" name="remember" id="remember" value="on">
 
                                 <div class="text-left">
-                                    <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
+                                    <a href="{{ route('password.request') }}" class="card-text">{{ __('auth.password_lost') }}</a>
                                 </div>
 
                                 <button class="btn btn-block blue-gradient mt-2 mb-2" type="submit">{{ __('auth.login') }}</button>
