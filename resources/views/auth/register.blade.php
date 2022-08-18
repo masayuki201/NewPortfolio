@@ -24,7 +24,6 @@
                                 <div class="md-form">
                                     <label for="nickname">{{ __('auth.nickname') }}</label>
                                     <input class="form-control" type="text" id="nickname" name="nickname" required value="{{ old('nickname') }}">
-                                    <small>{{ __('auth.nickname.attention') }}</small>
                                 </div>
                                 <div class="md-form">
                                     <label for="email">{{ __('auth.email') }}</label>
