@@ -34,7 +34,7 @@ class UsersController extends Controller
             return view('users.edit',[ 'id' => $id ]);
         }
         //異なるIDで開こうとした際、フラシュメッセージをみんなの動画ページへ表示させる
-        return redirect('/index')->with('flash_message', '不適切なURLだよ。');
+        return redirect('/index')->with('flash_message', '不適切なURLです。');
     }
 
     //マイページ更新
