@@ -14,7 +14,7 @@ class CreateTargetsTable extends Migration
     public function up()
     {
         Schema::create('targets', function (Blueprint $table) {
-            $table->increments('id')->comment('対象ID');
+            $table->Bigincrements('id')->comment('対象ID');
             $table->string('target_grade')->comment('対象学年');
         });
     }
