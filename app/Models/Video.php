@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 class Video extends Model
 {
@@ -15,14 +18,31 @@ class Video extends Model
         'target_id',
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\Models\User');
     }
 
-    public function target()
+    public function target(): BelongsTo
     {
-        return $this->belongsTo(Target::class);
+        return $this->belongsTo('App\Models\Target');
+    }
+
+    public function likes(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Models\User', 'likes')->withTimestamps();
+    }
+
+    //ログインユーザーがこの動画をいいね済みかどうかを返すメソッド
+    public function isLikedBy(?User $user): bool
+    {
+        return $user ? (bool)$this->likes->where('id', $user->id)->count() : false;
+    }
+
+    //現在のいいね数を算出するメソッド
+    public function getCountLikesAttribute(): int
+    {
+        return $this->likes->count();
     }
 
     public $timestamps = false;
