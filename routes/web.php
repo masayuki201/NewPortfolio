@@ -71,9 +71,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
     //動画削除
     Route::delete('/videos/{id}/delete', [VideosController::class, 'destroy'])->name('videos.destroy');
+    //いいね
+    Route::put('/videos/{video}/like', [VideosController::class, 'like'])->name('videos.like');
+    //いいね解除
+    Route::delete('/videos/{video}/like', [VideosController::class, 'unlike'])->name('videos.unlike');
 });
 
-//ログイン中　動画登録関連
+//ログイン中　マイページ関連
 Route::group(['middleware' => 'auth'], function () {
     //マイページ
     Route::get('/user/{id}', [UsersController::class, 'show'])->name('user.show');
@@ -84,4 +88,5 @@ Route::group(['middleware' => 'auth'], function () {
     //ユーザ情報削除
     Route::delete('/user/{id}/delete', [UsersController::class, 'destroy'])->name('user.destroy');
 });
+
 
