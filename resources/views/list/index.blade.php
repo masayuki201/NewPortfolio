@@ -32,7 +32,7 @@
                     {{-- 検索ボタン --}}
                     <span class="input-group-btn">
                 {{ csrf_field() }}
-                <input type="submit" class="btn btn-ryb  ml-4" value="検索">
+                <input type="submit" class="btn blue-gradient mt-2 mb-2" value="検索">
             </span>
                 </div>
             </div>
@@ -66,6 +66,21 @@
                             :target_grade='@json($search->target['target_grade'])'
                         >
                         </video-card>
+                        {{-- いいね!を表示 --}}
+                        @csrf
+                        @method('put')
+                        <div class="card-body pt-0 pb-2 pl-3">
+                            <div class="card-text">
+                                <video-like
+                                    :initial-is-liked-by='@json($video->isLikedBy(Auth::user()))'
+                                    :initial-count-likes='@json($video->count_likes)'
+                                    :authorized='@json(Auth::check())'
+                                    endpoint="{{ route('videos.like', ['video'=>$video]) }}"
+                                >
+                                </video-like>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -80,12 +95,14 @@
         import NameChip from "../../js/components/NameChip";
         import VideoCard from "../../js/components/VideoCard";
         import TargetgradeChip from "../../js/components/TargetgradeChip";
+        import VideoLike from "../../js/components/VideoLike";
 
         export default {
             components: {
                 NameChip,
                 VideoCard,
                 TargetgradeChip,
+                VideoLike,
             }
         };
     </script>
