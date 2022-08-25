@@ -6,7 +6,6 @@
             :color="gradeColor(target_grade)"
             text-color="white"
         >
-
             <v-avatar>
                 <i
                     :class="gradeAvatar(target_grade)"
