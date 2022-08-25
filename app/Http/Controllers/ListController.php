@@ -21,7 +21,5 @@ class ListController extends Controller
         $params = $this->service->getListPage($request);
 
         return  view('list.index', $params);
-
     }
-
 }
