@@ -46,7 +46,6 @@ class VideosController extends Controller
     //いいねアクション
     public function like(Request $request, Video $video)
     {
-        \Debugbar::info('こ1');
         //重複のいいねを防ぐ
         $video->likes()->detach($request->user()->id);
         $video->likes()->attach($request->user()->id);
