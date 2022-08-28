@@ -62,6 +62,7 @@ Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index
 
 //みんなの動画
 Route::get('/list', [ListController::class, 'index'])->name('list.index');
+Route::get('/list/{nickname}/detail', [ListController::class, 'detail'])->name('list.detail');
 
 //ログイン中　動画登録関連
 Route::group(['middleware' => 'auth'], function () {
