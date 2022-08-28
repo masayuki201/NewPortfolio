@@ -24,6 +24,22 @@
                             :target_grade='@json($video->target['target_grade'])'
                         >
                         </video-card>
+                        {{-- いいね!を表示 --}}
+                        @csrf
+                        @method('put')
+                        <div class="card-body pt-0 pb-2 pl-3">
+                            <div class="card-text">
+                                <video-like
+                                    :initial-is-liked-by='@json($video->isLikedBy(Auth::user()))'
+                                    :initial-count-likes='@json($video->count_likes)'
+                                    :authorized='@json(Auth::check())'
+                                    endpoint="{{ route('videos.like', ['video'=>$video]) }}"
+                                >
+                                </video-like>
+                            </div>
+                        </div>
+
+
                         {{-- 登録動画/削除ボタン --}}
                         @if(Auth::id() == $video->user_id)
                             <form method="POST" action="{{ route('videos.destroy', [$video->id]) }}">
