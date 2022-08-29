@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -41,4 +41,10 @@ class User extends Authenticatable
     }
 
     public $timestamps = false;
+
+    public function followers(): BelongsToMany
+    {
+        return $this->belongsToMany('App\User', 'follows', 'followee_id', 'follower_id')->withTimestamps();
+    }
+
 }
