@@ -29,6 +29,18 @@
                                     <input class="form-control" type="text" id="email" value="{{Auth::user()->email}}" name="email" disabled>
                                 </div>
 
+                                <div class="card-body">
+                                    <div class="card-text text-left">
+                                        <a href="" class="text-muted">
+                                            5 フォロー
+                                        </a>
+                                        <a href="" class="text-muted">
+                                            10 フォロワー
+                                        </a>
+                                    </div>
+                                </div>
+
+
                                 <a href="/user/{{Auth::id()}}/edit" class="btn btn-block blue-gradient mt-2 mb-2">{{ __('users.edit_remove') }}</a>
                         </div>
                     </div>
