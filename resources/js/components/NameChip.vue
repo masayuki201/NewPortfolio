@@ -5,10 +5,13 @@
             color="orange"
             text-color="white"
         >
+            <a :href="`/list/${nickname}/detail`" class="text-white">
             <v-avatar left>
                 <v-icon>mdi-account-circle</v-icon>
             </v-avatar>
+
             {{ nickname }}
+            </a>
         </v-chip>
     </div>
 </template>
