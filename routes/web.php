@@ -88,6 +88,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/user/{id}', [UsersController::class, 'update'])->name('user.update');
     //ユーザ情報削除
     Route::delete('/user/{id}/delete', [UsersController::class, 'destroy'])->name('user.destroy');
+    //フォローする
+    Route::put('/user/{nickname}/follow', [UsersController::class, 'follow'])->name('user.follow');
+    //フォロー解除
+    Route::delete('/user/{nickname}/follow', [UsersController::class, 'unfollow'])->name('user.unfollow');
 });
 
 
