@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use App\Models\User;
 
 
 class UsersController extends Controller
@@ -63,5 +64,32 @@ class UsersController extends Controller
         return redirect('/');
     }
 
+    //フォローする
+    public function follow(Request $request, string $nickname)
+    {
+        $user = User::where('nickname', $nickname)->first();
+        if($user->id === $request->user()->id)
+        {
+            return abort('404', 'Cannot follow yourself.');
+        }
+
+        $request->user()->followings()->detach($user);
+        $request->user()->followings()->attach($user);
+
+        return ['nickname' => $nickname];
+    }
+    //フォロー解除
+    public function unfollow(Request $request, string $nickname)
+    {
+        $user = User::where('nickname', $nickname)->first();
+        if($user->id === $request->user()->id)
+        {
+            return abort('404', 'Cannot follow yourself.');
+        }
+
+        $request->user()->followings()->detach($user);
+
+        return ['nickname' => $nickname];
+    }
 
 }
