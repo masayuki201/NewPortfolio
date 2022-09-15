@@ -32,10 +32,10 @@
                                 <div class="card-body">
                                     <div class="card-text text-left">
                                         <a href="" class="text-muted">
-                                            5 フォロー
+                                            {{ Auth::user()->count_followings }}フォロー
                                         </a>
                                         <a href="" class="text-muted">
-                                            10 フォロワー
+                                            {{ Auth::user()->count_followers }} フォロワー
                                         </a>
                                     </div>
                                 </div>
