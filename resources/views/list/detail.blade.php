@@ -47,6 +47,12 @@
             </div>
         </div>
     </div>
-    @include('videos.videos',['videos' => $user->videos])
+    @if(Route::currentRouteName() === 'list.detail' )
+        @include('videos.videos',['videos' => $user->videos])
+    @else
+        @include('list.likes',['videos' => $user->videos])
+    @endif
+
+{{--    @include('videos.videos',['videos' => $user->videos])--}}
     @include('layout.footer')
 @endsection

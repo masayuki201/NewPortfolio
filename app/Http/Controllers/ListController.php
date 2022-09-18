@@ -31,4 +31,16 @@ class ListController extends Controller
             'user' => $user,
         ]);
     }
+
+    public function likes(string $nickname)
+    {
+        $user = User::where('nickname', $nickname)->first();
+
+        $videos = $user->likes->sortByDesc('create_at');
+
+        return view('list.likes', [
+            'user' =>$user,
+            'videos' => $videos,
+        ]);
+    }
 }
