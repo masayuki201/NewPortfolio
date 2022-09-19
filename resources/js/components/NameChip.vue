@@ -1,18 +1,20 @@
 <template>
     <div class="text-left">
-        <v-chip
-            class="ma-2"
-            color="orange"
-            text-color="white"
-        >
-            <a :href="`/list/${nickname}/detail`" class="text-white">
-            <v-avatar left>
-                <v-icon>mdi-account-circle</v-icon>
-            </v-avatar>
+        <a :href="`/list/${nickname}/detail`" class="text-white">
+            <v-chip
+                class="ma-2"
+                color="orange"
+                text-color="white"
+            >
+                <a :href="`/list/${nickname}/detail`" class="text-white">
+                    <v-avatar left>
+                        <v-icon>mdi-account-circle</v-icon>
+                    </v-avatar>
 
-            {{ nickname }}
-            </a>
-        </v-chip>
+                    {{ nickname }}
+                </a>
+            </v-chip>
+        </a>
     </div>
 </template>
 
@@ -32,7 +34,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-
-</style>
