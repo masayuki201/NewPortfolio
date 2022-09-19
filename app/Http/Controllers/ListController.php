@@ -43,4 +43,28 @@ class ListController extends Controller
             'videos' => $videos,
         ]);
     }
+
+    public function followings(string $nickname)
+    {
+        $user = User::where('nickname', $nickname)->first();
+
+        $followings = $user->followings->sortByDesc('create_at');
+
+        return view('list.followings',[
+            'user' => $user,
+            'followings' => $followings,
+        ]);
+    }
+
+    public function followers(string $nickname)
+    {
+        $user = User::where('nickname', $nickname)->first();
+
+        $followers = $user->followers->sortByDesc('create_at');
+
+        return view('list.followers', [
+            'user' => $user,
+            'followers' => $followers,
+        ]);
+    }
 }
