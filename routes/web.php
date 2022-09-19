@@ -62,8 +62,14 @@ Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index
 
 //みんなの動画
 Route::get('/list', [ListController::class, 'index'])->name('list.index');
+//登録動画tab
 Route::get('/list/{nickname}/detail', [ListController::class, 'detail'])->name('list.detail');
+//いいねtab
 Route::get('/list/{nickname}/likes', [ListController::class, 'likes'])->name('list.likes');
+//フォロー一覧
+Route::get('/list/{nickname}/followings', [ListController::class, 'followings'])->name('list.followings');
+//フォロワー一覧
+Route::get('/list/{nickname}/followers', [ListController::class, 'followers'])->name('list.followers');
 
 //ログイン中　動画登録関連
 Route::group(['middleware' => 'auth'], function () {
