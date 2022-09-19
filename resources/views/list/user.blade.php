@@ -1,21 +1,10 @@
 <div class="card mt-3">
     <div class="card-body">
         <div class="d-flex flex-row">
-            <v-chip
-                class="ma-2"
-                color="orange"
-                text-color="white"
-                x-large
+            <person-name-chip
+                :nickname='@json($user->nickname)'
             >
-                <v-avatar left>
-                    <v-icon
-                        x-large
-                    >
-                        mdi-account-circle
-                    </v-icon>
-                </v-avatar>
-                {{ $user->nickname }}
-            </v-chip>
+            </person-name-chip>
             {{-- フォロー/フォロワーボタン --}}
             @if( Auth::id() !== $user['id'] )
                 <follow-button
@@ -30,13 +19,12 @@
     </div>
     <div class="card-body">
         <div class="card-text">
-            <a href="" class="text-muted">
+            <a href="{{ route('list.followings', ['nickname' => $user->nickname]) }}" class="text-muted">
                 {{ $user->count_followings }}フォロー
             </a>
-            <a href="" class="text-muted">
+            <a href="{{ route('list.followers', ['nickname' => $user->nickname]) }}" class="text-muted">
                 {{ $user->count_followers }} フォロワー
             </a>
         </div>
     </div>
 </div>
-
