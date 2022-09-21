@@ -47,19 +47,3 @@
     </div>
     @endforeach
 </div>
-
-@section('script')
-    <script>
-        import NameChip from "../../js/components/NameChip";
-        import VideoCard from "../../js/components/VideoCard";
-        import TargetgradeChip from "../../js/components/TargetgradeChip";
-
-        export default {
-            components: {
-                NameChip,
-                VideoCard,
-                TargetgradeChip,
-            }
-        };
-    </script>
-@endsection
