@@ -20,14 +20,14 @@ class ListController extends Controller
     {
         $params = $this->service->getListPage($request);
 
-        return  view('list.index', $params);
+        return  view('lists.index', $params);
     }
 
     public function detail(string $nickname)
     {
         $user = User::where('nickname', $nickname)->first();
 
-        return view('list.detail', [
+        return view('lists.detail', [
             'user' => $user,
         ]);
     }
@@ -38,7 +38,7 @@ class ListController extends Controller
 
         $videos = $user->likes->sortByDesc('create_at');
 
-        return view('list.likes', [
+        return view('lists.likes', [
             'user' =>$user,
             'videos' => $videos,
         ]);
@@ -50,7 +50,7 @@ class ListController extends Controller
 
         $followings = $user->followings->sortByDesc('create_at');
 
-        return view('list.followings',[
+        return view('lists.followings',[
             'user' => $user,
             'followings' => $followings,
         ]);
@@ -62,7 +62,7 @@ class ListController extends Controller
 
         $followers = $user->followers->sortByDesc('create_at');
 
-        return view('list.followers', [
+        return view('lists.followers', [
             'user' => $user,
             'followers' => $followers,
         ]);

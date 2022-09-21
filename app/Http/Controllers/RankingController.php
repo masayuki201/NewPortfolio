@@ -18,6 +18,6 @@ class RankingController extends Controller
     {
         $videoRanking = $this->service->getRankingPage($request);
 
-        return view('ranking.index', $videoRanking);
+        return view('rankings.index', $videoRanking);
     }
 }
