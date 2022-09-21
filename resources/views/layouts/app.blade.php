@@ -24,7 +24,7 @@
 <body>
 <div id="app">
     <v-app>
-    @yield('content')
+        @yield('content')
     </v-app>
 </div>
 

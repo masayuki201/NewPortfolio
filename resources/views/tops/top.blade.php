@@ -1,9 +1,9 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title','ちるび/topページ')
 
 @section('content')
-    @include('layout.header')
+    @include('layouts.header')
     {{-- "junbotron" 背景画を入れる--}}
     <div class="jumbotron jumbotron-extend">
         <div class="container-fluid jumbotron-container">
@@ -12,5 +12,5 @@
             </div>
         </div>
     </div>
-    @include('layout.footer')
+    @include('layouts.footer')
 @endsection

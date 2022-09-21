@@ -1,13 +1,13 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title', 'ちるび/みんなの動画ページ/登録動画')
 
 @section('content')
-    @include('layout.header')
+    @include('layouts.header')
     <div class="container">
-        @include('list.user')
-        @include('list.tab', ['hasVideos' => true, 'hasLikes' => false])
+        @include('lists.user')
+        @include('lists.tab', ['hasVideos' => true, 'hasLikes' => false])
         @include('videos.videos', ['videos' => $user->videos])
     </div>
-    @include('layout.footer')
+    @include('layouts.footer')
 @endsection
