@@ -23,7 +23,7 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', function () {
-    return view('top.top');
+    return view('tops.top');
 });
 
 //新規登録

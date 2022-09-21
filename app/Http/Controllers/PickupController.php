@@ -18,6 +18,6 @@ class PickupController extends Controller
     {
         $pickup = $this->service->getPickupPage($request);
 
-        return view('pickup.index', ['pickup' => $pickup]);
+        return view('pickups.index', ['pickup' => $pickup]);
     }
 }

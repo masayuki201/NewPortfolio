@@ -63,19 +63,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-/*.dog {*/
-/*    color: pink;*/
-/*}*/
-/*.green {*/
-/*    color: rgba(36, 128, 0, 0.58);*/
-/*}*/
-/*.blue {*/
-/*    color: rgba(0, 13, 255, 0.99);*/
-/*}*/
-/*.red {*/
-/*    color: #f81b1b;*/
-/*}*/
-
-</style>

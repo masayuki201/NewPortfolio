@@ -1,9 +1,9 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title','ちるび/マイページ編集')
 
 @section('content')
-    @include('layout.header')
+    @include('layouts.header')
     <div class="container">
         <div class="row">
             <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
@@ -44,5 +44,5 @@
         </div>
     </div>
     </div>
-    @include('layout.footer')
+    @include('layouts.footer')
 @endsection
