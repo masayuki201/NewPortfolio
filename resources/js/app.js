@@ -7,6 +7,8 @@ import TargetgradeChip from "./components/TargetgradeChip";
 import RankingChip from "./components/RankingChip";
 import VideoLike from "./components/VideoLike";
 import FollowButton from "./components/FollowButton";
+import PersonNameChip from "./components/PersonNameChip";
+
 
 Vue.use(Vuetify);
 
@@ -20,5 +22,6 @@ const app = new Vue({
         RankingChip,
         VideoLike,
         FollowButton,
+        PersonNameChip,
     }
 });
