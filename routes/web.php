@@ -49,10 +49,13 @@ Route::prefix('login')->name('login.')->group(function () {
 });
 
 //パスワード再設定関連
-Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::prefix('password')->name('password.')->group(function () {
+    Route::get('/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('request');
+    Route::post('/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('email');
+    Route::get('/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('reset');
+    Route::post('/reset', [ResetPasswordController::class, 'reset'])->name('update');
+});
+
 
 //ピックアップ
 Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
@@ -61,44 +64,49 @@ Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
 Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index');
 
 //みんなの動画
-Route::get('/list', [ListController::class, 'index'])->name('list.index');
-//登録動画tab
-Route::get('/list/{nickname}/detail', [ListController::class, 'detail'])->name('list.detail');
-//いいねtab
-Route::get('/list/{nickname}/likes', [ListController::class, 'likes'])->name('list.likes');
-//フォロー一覧
-Route::get('/list/{nickname}/followings', [ListController::class, 'followings'])->name('list.followings');
-//フォロワー一覧
-Route::get('/list/{nickname}/followers', [ListController::class, 'followers'])->name('list.followers');
+Route::prefix('list')->name('list.')->group(function () {
+    //一覧
+    Route::get('/', [ListController::class, 'index'])->name('index');
+    //登録動画tab
+    Route::get('/{nickname}/detail', [ListController::class, 'detail'])->name('detail');
+    //いいねtab
+    Route::get('/{nickname}/likes', [ListController::class, 'likes'])->name('likes');
+    //フォロー一覧
+    Route::get('/{nickname}/followings', [ListController::class, 'followings'])->name('followings');
+    //フォロワー一覧
+    Route::get('/{nickname}/followers', [ListController::class, 'followers'])->name('followers');
+});
+
+
 
 //ログイン中　動画登録関連
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'as' => 'videos.'], function () {
     //動画登録画面
-    Route::get('/videos/create', [VideosController::class, 'create'])->name('videos.create');
+    Route::get('/videos/create', [VideosController::class, 'create'])->name('create');
     //動画登録
-    Route::post('/videos/store', [VideosController::class, 'store'])->name('videos.store');
+    Route::post('/videos/store', [VideosController::class, 'store'])->name('store');
     //動画削除
-    Route::delete('/videos/{id}/delete', [VideosController::class, 'destroy'])->name('videos.destroy');
+    Route::delete('/videos/{id}/delete', [VideosController::class, 'destroy'])->name('destroy');
     //いいね
-    Route::put('/videos/{video}/like', [VideosController::class, 'like'])->name('videos.like');
+    Route::put('/videos/{video}/like', [VideosController::class, 'like'])->name('like');
     //いいね解除
-    Route::delete('/videos/{video}/like', [VideosController::class, 'unlike'])->name('videos.unlike');
+    Route::delete('/videos/{video}/like', [VideosController::class, 'unlike'])->name('unlike');
 });
 
 //ログイン中　マイページ関連
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'as' => 'user.'], function () {
     //マイページ
-    Route::get('/user/{id}', [UsersController::class, 'show'])->name('user.show');
+    Route::get('/user/{id}', [UsersController::class, 'show'])->name('show');
     //マイページ編集
-    Route::get('/user/{id}/edit', [UsersController::class, 'edit'])->name('user.edit');
+    Route::get('/user/{id}/edit', [UsersController::class, 'edit'])->name('edit');
     //マイページ更新
-    Route::post('/user/{id}', [UsersController::class, 'update'])->name('user.update');
+    Route::post('/user/{id}', [UsersController::class, 'update'])->name('update');
     //ユーザ情報削除
-    Route::delete('/user/{id}/delete', [UsersController::class, 'destroy'])->name('user.destroy');
+    Route::delete('/user/{id}/delete', [UsersController::class, 'destroy'])->name('destroy');
     //フォローする
-    Route::put('/user/{nickname}/follow', [UsersController::class, 'follow'])->name('user.follow');
+    Route::put('/user/{nickname}/follow', [UsersController::class, 'follow'])->name('follow');
     //フォロー解除
-    Route::delete('/user/{nickname}/follow', [UsersController::class, 'unfollow'])->name('user.unfollow');
+    Route::delete('/user/{nickname}/follow', [UsersController::class, 'unfollow'])->name('unfollow');
 });
 
 
