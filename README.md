@@ -1,8 +1,8 @@
-##Children's Videos（通称:「ちるび」）Ver.2.0
+## Children's Videos（通称:「ちるび」）Ver.2.0
 
-##Children's Videos（通称:「ちるび」）にLaravel Mix（Vue.js）を使用しコンポーネント化を実装+追加機能を実装
+## Children's Videos（通称:「ちるび」）にLaravel Mix（Vue.js）を使用しコンポーネント化を実装+追加機能を実装
 
-##ちるびのGitHub
+## ちるびのGitHub
 https://github.com/masayuki201/PortFolio
 
 ## 追加機能
@@ -12,14 +12,14 @@ https://github.com/masayuki201/PortFolio
 - いいね機能
 - フォロー/フォロワー機能
 
-##追加ページ
+## 追加ページ
 - 動画投稿者のページ
 - 登録動画一覧ページ
 - いいね一覧ページ
 - フォロー/フォロワー一覧ページ
 - パスワード再設定ページ
 
-##追加DBテーブル
+## 追加DBテーブル
 - いいねテーブル（likesテーブル）
 - フォロー/フォロワーテーブル（followsテーブル）
 - Googleアカウントテーブル（personal_access_tokenテーブル）
@@ -37,7 +37,7 @@ https://github.com/masayuki201/PortFolio
 - GOOGLE_CLIENT API
 
 
-##コマンド一覧
+## コマンド一覧
 ### docker ビルド
 docker-compose build
 
@@ -60,6 +60,6 @@ http://localhost/
 ### phpmyadmin
 http://localhost:8080
 
-##その他
+## その他
 laravel/uiインストール（8系）
 composer require laravel/ui
