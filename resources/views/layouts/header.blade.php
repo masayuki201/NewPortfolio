@@ -2,7 +2,7 @@
     {{-- サイトロゴ --}}
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(255, 255, 255)">
         <a class="navbar-brand text-dark" href="/"><h6>Children's<br>Videos</h6></a>
-        <a class="navbar-brand text-dark mr-auto" href="/"><span class="h1">{{ __('layout.title') }}</span></a>
+        <a class="navbar-brand text-dark mr-auto" href="/"><span class="h1">{{ __('layout.title') }}</h6><h6>{{ __('layout.version') }}</h6></span></a>
 
         {{-- 1段目右寄せメニュー ログインしている場合 ニックネームを表示する--}}
         @auth
