@@ -2,6 +2,7 @@
     return [
 
         'title' => 'ちるび',
+        'version' => 'Ver.2.0',
         'pickup' => 'ピックアップ',
         'ranking' => 'ランキング',
         'list' => 'みんなの動画',
